@@ -1,46 +1,75 @@
-# Face Recognition Attendance System
+# FacePass: AI Face Recognition Attendance System
 
-A fully offline, browser-based attendance system built with React, Tailwind CSS, and `face-api.js`.
+FacePass is a modern, privacy-focused, and 100% offline face recognition application built with React and face-api.js. It allows organizations to manage attendance using biometric authentication without the need for a backend server.
 
-## Features
-- **Face Registration**: Capture face embeddings and store them locally.
-- **Real-time Attendance**: Automatically mark attendance when a face is recognized.
-- **Records Management**: View, filter, and export attendance logs as CSV.
-- **Offline First**: Works entirely in the browser using LocalStorage.
-- **Premium UI**: Modern design with dark mode and smooth animations.
+![FacePass Dashboard](https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/media/face_detection.png) *(Placeholder for your project screenshot)*
 
-## Prerequisites
-- **Node.js** (v18 or higher)
+## ✨ Features
+
+- **🚀 100% Offline**: All face detection and recognition is performed locally in the browser. No face data is ever sent to a server.
+- **🧠 AI-Powered**: Uses `face-api.js` (TensorFlow.js) with Tiny Face Detector for fast and accurate recognition.
+- **📦 Scalable Storage**: Utilizes `IndexedDB` for robust, high-capacity local storage of user profiles and logs.
+- **👥 User Management**: Dedicated interface to register, view, search, and delete user profiles.
+- **📊 Records & Export**: View attendance history with advanced filtering and export logs to CSV.
+- **🛡️ Privacy First**: Face data is stored as mathematical embeddings (128-float arrays), not actual photos.
+- **🌗 Modern UI**: Glassmorphism design with Dark Mode support, built with Tailwind CSS and Framer Motion.
+- **🔊 Audio Feedback**: Instant audio confirmation for successful attendance via Web Audio API.
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18, Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **AI/ML**: face-api.js (SSD Mobilenet & Tiny Face Detector)
+- **Database**: Browser IndexedDB
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v18.0.0 or higher)
 - **npm** or **yarn**
 
-## Getting Started
+### Installation
 
-1. **Install Dependencies**:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/Face-Recognition-Attendance-System.git
+   cd Face-Recognition-Attendance-System
+   ```
+
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. **Run the Development Server**:
+3. **Start the development server**:
    ```bash
    npm run dev
    ```
 
-3. **Build for Production**:
-   ```bash
-   npm run build
-   ```
+4. **Open in browser**:
+   Navigate to `http://localhost:5173`
 
-## Project Structure
-- `src/utils/faceApi.js`: Handles model loading and face recognition.
-- `src/utils/storage.js`: LocalStorage wrapper for persistence.
-- `src/pages/`: Contains Dashboard, Register, Attendance, and Records pages.
-- `public/models/`: Contains the pre-trained weights for face detection and recognition.
+## 📂 Project Structure
 
-## Note on Camera Access
-The application requires camera permissions. Ensure you are running on `localhost` or an `HTTPS` environment as most browsers block `getUserMedia` on insecure origins.
+- `src/pages/`: Main application modules (Dashboard, Register, Attendance, etc.)
+- `src/utils/faceApi.js`: Core AI logic and model management.
+- `src/utils/storage.js`: IndexedDB wrapper for local data persistence.
+- `src/utils/sounds.js`: Web Audio API synthesizer for feedback.
+- `public/models/`: Pre-trained neural network weights.
 
-## Models
-This project uses the following models from `face-api.js`:
-- SSD Mobilenet v1 (Face Detection)
-- Face Landmark 68 (Face Alignment)
-- Face Recognition (Embedding Extraction)
+## 🔒 Security & Privacy
+
+FacePass is designed with security in mind:
+- **Zero Cloud**: No external API calls are made for face recognition.
+- **Data Erasure**: Users can clear all records and profiles directly from the Settings page.
+- **Local-Only**: Your biometric data remains within your browser's internal storage.
+
+## 📄 License
+
+This project is open-source. See the [LICENSE](LICENSE) file for details.
+
+---
+Built with ❤️ using React and AI.
